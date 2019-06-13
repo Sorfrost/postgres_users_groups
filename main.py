@@ -63,6 +63,9 @@ def parse(result):
 
 if __name__ == '__main__':
     result = querydb('postgresql', QUERY)
-    os.remove(OUTPUT)
+    try:
+        os.remove(OUTPUT)
+    except:
+        pass
     parse(result)
     exit(0)
